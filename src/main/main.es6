@@ -12,12 +12,13 @@ function createWindow() {
     width: 800,
     height: 600
   })
-
-  mainWindow.loadURL(url.format({
-    pathname: path.join(root, 'index.html'),
-    protocol: 'file:',
-    slashes: true
-  }))
+  console.log(root)
+  // mainWindow.loadURL(url.format({
+  //   pathname: path.join(root, 'index.html'),
+  //   protocol: 'file:',
+  //   slashes: true
+  // }))
+  mainWindow.loadURL('../renderer/index.html')
 
   mainWindow.webContents.openDevTools()
 

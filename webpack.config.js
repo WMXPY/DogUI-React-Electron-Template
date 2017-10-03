@@ -6,7 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry: path.resolve(root, 'src/renderer/buildRenderer.jsx'),
     output: {
-        filename: 'bundles.js',
+        filename: 'bundle.js',
         path: path.resolve(root, 'build/renderer')
     },
     module: {

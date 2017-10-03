@@ -3,12 +3,7 @@
   "version": "1.0.0",
   "description": ":ballot_box_with_check: DogUI React Electron Template",
   "main": "main.js",
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/WMXPY/dogui-react-electron-template.git"
@@ -24,10 +19,6 @@
   "bugs": {
     "url": "https://github.com/WMXPY/dogui-react-electron-template/issues"
   },
-  "dependencies": {
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-scripts": "1.0.14"
-  },
+  "devDependencies": {},
   "homepage": "https://github.com/WMXPY/dogui-react-electron-template#readme"
 }

@@ -1,0 +1,25 @@
+{
+  "name": "dogui-react-electron-template",
+  "version": "1.0.0",
+  "description": ":ballot_box_with_check: DogUI React Electron Template",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WMXPY/dogui-react-electron-template.git"
+  },
+  "keywords": [
+    "React",
+    "DogUI",
+    "Dogo",
+    "Electron"
+  ],
+  "author": "WMXPY",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/WMXPY/dogui-react-electron-template/issues"
+  },
+  "homepage": "https://github.com/WMXPY/dogui-react-electron-template#readme"
+}

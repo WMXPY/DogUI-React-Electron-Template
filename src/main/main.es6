@@ -1,10 +1,11 @@
-const electron = require('electron')
-const app = electron.app
-const BrowserWindow = electron.BrowserWindow
-
-const path = require('path')
-const url = require('url')
-let mainWindow
+import electron, {
+  app,
+  BrowserWindow
+} from 'electron';
+import path from 'path';
+import url from 'url';
+const root = __dirname;
+let mainWindow;
 
 function createWindow() {
   mainWindow = new BrowserWindow({
@@ -13,7 +14,7 @@ function createWindow() {
   })
 
   mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'index.html'),
+    pathname: path.join(root, 'index.html'),
     protocol: 'file:',
     slashes: true
   }))
@@ -24,6 +25,7 @@ function createWindow() {
     mainWindow = null
   })
 }
+
 app.on('ready', createWindow)
 
 app.on('window-all-closed', function () {

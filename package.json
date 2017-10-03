@@ -2,11 +2,13 @@
   "name": "dogui-react-electron-template",
   "version": "1.0.0",
   "description": ":ballot_box_with_check: DogUI React Electron Template",
-  "main": "main.js",
+  "main": "build/main/main.js",
   "scripts": {
     "pack": "webpack --config webpack.dev.js",
     "build": "webpack --config webpack.config.js --display-modules --sort-modules-by size",
-    "dev": "webpack-dev-server --config webpack.dev.js --open"
+    "dev": "webpack-dev-server --config webpack.dev.js --open",
+    "es": "babel src/main --copy-files --presets=es2015 --source-maps --extensions .es6,.es --out-dir build/main",
+    "electron": "electron ."
   },
   "repository": {
     "type": "git",
@@ -23,10 +25,15 @@
   "bugs": {
     "url": "https://github.com/WMXPY/dogui-react-electron-template/issues"
   },
+  "dependencies": {
+    "electron": "^1.7.8"
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.2",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
     "babel-preset-env": "^1.6.0",
+    "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "html-webpack-plugin": "^2.30.1",
     "react": "^16.0.0",

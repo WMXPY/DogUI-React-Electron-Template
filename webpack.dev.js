@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: [
-        'react-hot-loader/patch', // 激活HMR
+        'react-hot-loader/patch',
         'webpack-dev-server/client',
         'webpack/hot/only-dev-server',
         path.resolve(root, 'src/renderer/renderer.jsx')
@@ -27,11 +27,11 @@ module.exports = {
             title: 'DogUI-React-Electron-Template',
             template: path.resolve(root, 'build/template.html')
         }),
-        new webpack.HotModuleReplacementPlugin(), // 热替换插件
-        new webpack.NamedModulesPlugin() // 执行热替换时打印模块名字
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NamedModulesPlugin()
     ],
     devServer: {
-        hot: true, // 激活服务器的HMR
+        hot: true,
         contentBase: path.resolve(root, 'build/renderer'),
         publicPath: '/',
         port: 3000,

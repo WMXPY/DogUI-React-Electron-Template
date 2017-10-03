@@ -5,6 +5,7 @@
   "main": "main.js",
   "scripts": {
     "pack": "webpack --config webpack.dev.js",
+    "build": "webpack --config webpack.config.js --display-modules --sort-modules-by size",
     "dev": "webpack-dev-server --config webpack.dev.js --open"
   },
   "repository": {

@@ -1,10 +1,13 @@
 const path = require('path')
 const root = __dirname
+const webpack = require('webpack');
+
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: path.resolve(__dirname, 'src/renderer/test.js'),
+    entry: path.resolve(root, 'src/renderer/buildRenderer.jsx'),
     output: {
-        filename: 'bundle.js',
+        filename: 'bundles.js',
         path: path.resolve(__dirname, 'build/renderer')
     },
     // loaders
@@ -14,5 +17,20 @@ module.exports = {
             use: ['babel-loader'],
             exclude: /node_modules/
         }]
-    }
+    },
+    // externals: {
+    //     "react-dom": 'React-dom'
+    // },
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: 'DogUI-React-Electron-Template',
+            template: path.resolve(root, 'build/template.html')
+        }),
+        new webpack.DefinePlugin({
+            'process.env': {
+                NODE_ENV: JSON.stringify('production')
+            }
+        }),
+        new webpack.optimize.UglifyJsPlugin()
+    ],
 }

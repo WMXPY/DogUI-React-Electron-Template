@@ -22,7 +22,9 @@ app.on('ready', () => {
 	if (isDev) {
 		mainWindow.loadURL('http://localhost:3000/');
 	} else {
-		mainWindow.loadURL(__dirname + '\\..\\renderer\\index.html');
+		let fileURL;
+		fileURL = 'file://' + __dirname + '/../renderer/index.html';
+		mainWindow.loadURL(fileURL);
 	}
 	mainWindow.webContents.openDevTools();
 

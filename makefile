@@ -10,6 +10,15 @@ install :
 	npm install
 	npm install --only=dev
 
+compile :
+ifeq ($(UNAME), win32)
+	.\node_modules\.bin\webpack --config webpack.config.js --display-modules --sort-modules-by size
+	.\node_modules\.bin\babel src/main --copy-files --source-maps --plugins=transform-es2015-modules-commonjs --extensions .es6,.es --out-dir build/main
+else
+	./node_modules/.bin/webpack --config webpack.config.js --display-modules --sort-modules-by size
+	./node_modules/.bin/babel src/main --copy-files --source-maps --plugins=transform-es2015-modules-commonjs --extensions .es6,.es --out-dir build/main
+endif
+
 electron :
 ifeq ($(UNAME), win32)
 	.\node_modules\.bin\babel src/main --copy-files --source-maps --plugins=transform-es2015-modules-commonjs --extensions .es6,.es --out-dir build/main
@@ -52,4 +61,3 @@ ifeq ($(UNAME), win32)
 else
 	rm -rf build/main/*.js build/main/*.js.map  build/renderer/*.js build/renderer/*.js.map  build/renderer/*.html dist
 endif
-	

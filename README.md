@@ -2,6 +2,36 @@
 
 :ballot_box_with_check: DogUI React Electron Template
 
+## Usage
+
+### download
+
+```bash
+    git clone https://github.com/WMXPY/dogui-react-electron-template.git
+```
+
+### edit
+
+edit main.es6, config es6 files for main process
+edit renderer's .jsx file for renderer process
+
+### dev
+
+```bash
+    make both
+```
+
+### pack
+
+```bash
+    make compile
+```
+
+### deploy
+
+```bash
+    make deploy
+```
 
 ## License
 

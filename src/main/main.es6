@@ -10,6 +10,7 @@ import url from 'url';
 import config, {
 	menuTemplate
 } from './config/config';
+import icon from './config/icons';
 const log = function (string) {
 	dialog.showMessageBox({
 		message: string
@@ -21,7 +22,8 @@ let mainWindow;
 app.on('ready', () => {
 	mainWindow = new BrowserWindow({
 		width: 800,
-		height: 600
+		height: 600,
+		icon: icon.favicon
 	});
 	Menu.setApplicationMenu(Menu.buildFromTemplate(menuTemplate));
 	if (config.isDevelopment) {

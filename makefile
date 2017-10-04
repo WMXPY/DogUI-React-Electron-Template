@@ -50,6 +50,6 @@ endif
 clean :
 ifeq ($(UNAME), win32)
 else
-	rm -rf build/main/*.js build/main/*.js.map  build/renderer/*.js build/renderer/*.js.map  build/renderer/*.html
+	rm -rf build/main/*.js build/main/*.js.map  build/renderer/*.js build/renderer/*.js.map  build/renderer/*.html dist
 endif
 	

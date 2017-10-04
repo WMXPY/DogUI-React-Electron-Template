@@ -2,3 +2,4 @@ node_modules
 build/renderer
 build/main
 npm-debug.log
+dist

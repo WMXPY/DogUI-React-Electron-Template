@@ -4,6 +4,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+    devtool: 'cheap-module-eval-source-map',
     entry: [
         'react-hot-loader/patch',
         'webpack-dev-server/client',

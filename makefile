@@ -9,6 +9,7 @@ DRET : renderer
 electron :
 ifeq ($(UNAME), win32)
 	.\node_modules\.bin\babel src/main --copy-files --source-maps --plugins=transform-es2015-modules-commonjs --extensions .es6,.es --out-dir build/main
+	.\node_modules\.bin\electron .
 else
 endif
 

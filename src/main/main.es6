@@ -19,7 +19,11 @@ app.on('ready', () => {
 	if (isDev) {
 		mainWindow.loadURL('http://localhost:3000/');
 	} else {
-		mainWindow.loadURL('file://' + __dirname + '/main/test.html');
+		const dialog = require('electron').dialog;
+		console.log(dialog.showMessageBox({
+			message: __dirname + '\\..\\renderer\\index.html'
+		}));
+		mainWindow.loadURL(__dirname + '\\..\\renderer\\index.html');
 	}
 	mainWindow.webContents.openDevTools();
 

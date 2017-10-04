@@ -1,9 +1,15 @@
 import electron, {
 	app,
+	dialog,
 	BrowserWindow
 } from 'electron';
 import path from 'path';
 import url from 'url';
+const log = function (string) {
+	dialog.showMessageBox({
+		message: string
+	});
+}
 const root = __dirname;
 const isDev = false;
 let mainWindow;
@@ -11,18 +17,11 @@ let mainWindow;
 app.on('ready', () => {
 	mainWindow = new BrowserWindow({
 		width: 800,
-		height: 600,
-		webPreferences: {
-			webSecurity: false
-		}
+		height: 600
 	});
 	if (isDev) {
 		mainWindow.loadURL('http://localhost:3000/');
 	} else {
-		const dialog = require('electron').dialog;
-		console.log(dialog.showMessageBox({
-			message: __dirname + '\\..\\renderer\\index.html'
-		}));
 		mainWindow.loadURL(__dirname + '\\..\\renderer\\index.html');
 	}
 	mainWindow.webContents.openDevTools();

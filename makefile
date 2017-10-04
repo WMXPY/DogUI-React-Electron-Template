@@ -30,3 +30,6 @@ ifeq ($(UNAME), win32)
 	concurrently ".\node_modules\.bin\electron ." ".\node_modules\.bin\webpack-dev-server --config webpack.dev.js --open"
 else
 endif
+
+deploy :
+	.\node_modules\.bin\electron-builder

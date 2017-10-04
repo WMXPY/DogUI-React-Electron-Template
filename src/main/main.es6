@@ -7,25 +7,15 @@ import electron, {
 } from 'electron';
 import path from 'path';
 import url from 'url';
-import config from './config/config';
+import config, {
+	menuTemplate
+} from './config/config';
 const log = function (string) {
 	dialog.showMessageBox({
 		message: string
 	});
 }
 const root = __dirname;
-const menuTemplate = [{
-	label: '窗口',
-	role: 'window',
-	submenu: [{
-		label: '重新加载',
-		accelerator: 'CmdOrCtrl+R',
-		click: (item, focusedWindow) => {
-			if (focusedWindow)
-				focusedWindow.reload();
-		}
-	}]
-}];
 let mainWindow;
 
 app.on('ready', () => {

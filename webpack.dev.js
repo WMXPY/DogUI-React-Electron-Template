@@ -16,6 +16,9 @@ module.exports = {
         path: path.resolve(root, 'build/renderer'),
         publicPath: '/'
     },
+    resolve: {
+        extensions: ['.js', '.jsx']
+    },
     module: {
         rules: [{
             test: /\.jsx?$/,

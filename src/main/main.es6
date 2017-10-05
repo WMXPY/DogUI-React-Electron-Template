@@ -21,8 +21,8 @@ let mainWindow;
 
 app.on('ready', () => {
 	mainWindow = new BrowserWindow({
-		width: 800,
-		height: 600,
+		width: 1440,
+		height: 900,
 		icon: icon.favicon
 	});
 	Menu.setApplicationMenu(Menu.buildFromTemplate(menuTemplate));

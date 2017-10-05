@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Jumper from './jumper.jsx';
+import Jumper from './jumper';
 
 class RouterOne extends Component {
 

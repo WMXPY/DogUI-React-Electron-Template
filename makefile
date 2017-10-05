@@ -44,9 +44,9 @@ endif
 
 both :
 ifeq ($(UNAME), win32)
-	.\node_modules\.bin\concurrently ".\node_modules\.bin\electron ." ".\node_modules\.bin\webpack-dev-server --config webpack.dev.js --open"
+	.\node_modules\.bin\concurrently ".\node_modules\.bin\electron ." ".\node_modules\.bin\webpack-dev-server --config webpack.dev.js"
 else
-	./node_modules/.bin/concurrently "./node_modules/.bin/electron ." "./node_modules/.bin/webpack-dev-server --config webpack.dev.js --open"
+	./node_modules/.bin/concurrently "./node_modules/.bin/electron ." "./node_modules/.bin/webpack-dev-server --config webpack.dev.js"
 endif
 
 deploy :

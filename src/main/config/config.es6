@@ -4,7 +4,7 @@ import {
 } from 'electron';
 
 export default {
-    isDevelopment: false,
+    isDevelopment: true,
     os: os.platform()
 }
 

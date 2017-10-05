@@ -4,7 +4,9 @@ else
 	UNAME := $(shell uname)
 endif
 
-DRET : both
+DRET : 
+	make electron
+	make both
 
 install :
 	npm install
@@ -22,10 +24,8 @@ endif
 electron :
 ifeq ($(UNAME), win32)
 	.\node_modules\.bin\babel src/main --copy-files --source-maps --plugins=transform-es2015-modules-commonjs --extensions .es6,.es --out-dir build/main
-	.\node_modules\.bin\electron .
 else
 	./node_modules/.bin/babel src/main --copy-files --source-maps --plugins=transform-es2015-modules-commonjs --extensions .es6,.es --out-dir build/main
-	./node_modules/.bin/electron .
 endif
 
 renderer :

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import Jumper from './jumper.jsx';
 
-class RouterTwo extends Component {
+class Jumper extends Component {
 
     constructor(props) {
         super(props);
@@ -11,17 +10,16 @@ class RouterTwo extends Component {
     render() {
         return (
             <div>
-                two
+                one
                 <br />
-                <button onClick={this.switchRouter}>Jump</button>
-                <Jumper history={this.props.history} />
+                <button onClick={this.switchRouter}>Jump To Two</button>
             </div>
         );
     }
 
     switchRouter() {
-        this.props.history.replace('/');
+        this.props.history.replace('/t');
     }
 }
 
-export default RouterTwo;
+export default Jumper;

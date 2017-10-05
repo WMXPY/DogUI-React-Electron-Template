@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Jumper from './jumper.jsx';
 
 class RouterOne extends Component {
 
@@ -13,6 +14,7 @@ class RouterOne extends Component {
                 one
                 <br />
                 <button onClick={this.switchRouter}>Jump</button>
+                <Jumper history={this.props.history} />
             </div>
         );
     }

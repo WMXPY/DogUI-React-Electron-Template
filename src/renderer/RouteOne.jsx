@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Jumper from './jumper';
+const storage = window.require('electron-json-storage');
 
 class RouterOne extends Component {
 

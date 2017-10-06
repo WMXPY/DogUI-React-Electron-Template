@@ -2,9 +2,11 @@ const path = require('path');
 const root = __dirname;
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
     entry: path.resolve(root, 'src/renderer/buildRenderer.jsx'),
+    target: 'electron-renderer',
     output: {
         filename: 'bundle.js',
         path: path.resolve(root, 'build/renderer')
@@ -17,6 +19,9 @@ module.exports = {
             test: /\.jsx?$/,
             use: ['babel-loader'],
             exclude: /node_modules/
+        }, {
+            test: /\.css$/,
+            use: ['style-loader', 'css-loader']
         }]
     },
     plugins: [
@@ -29,6 +34,7 @@ module.exports = {
                 NODE_ENV: JSON.stringify('production')
             }
         }),
+        new UglifyJSPlugin(),
         new webpack.optimize.UglifyJsPlugin()
     ],
 }

@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     devtool: 'cheap-module-eval-source-map',
+    target: 'electron-renderer',
     entry: [
         'react-hot-loader/patch',
         'webpack-dev-server/client',
@@ -24,6 +25,9 @@ module.exports = {
             test: /\.jsx?$/,
             use: ['babel-loader'],
             exclude: /node_modules/
+        }, {
+            test: /\.css$/,
+            use: ['style-loader', 'css-loader']
         }]
     },
     plugins: [

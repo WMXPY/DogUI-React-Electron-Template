@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
-import Jumper from './jumper';
+import { Route, Switch } from 'react-router-dom';
+import './realative.css';
 
 class RouterTwo extends Component {
+    location;
 
     constructor(props) {
         super(props);
+        this.location = "/main";
         this.switchRouter = this.switchRouter.bind(this);
+        this.switchRoutert = this.switchRoutert.bind(this);
     }
 
     render() {
@@ -13,14 +17,24 @@ class RouterTwo extends Component {
             <div>
                 two
                 <br />
-                <button onClick={this.switchRouter}>Jump</button>
-                <Jumper history={this.props.history} />
+                <button onClick={this.switchRouter}>ttt</button>
+                <button onClick={this.switchRoutert}>rrr</button>
+                <Switch>
+                    <Route exact path={`${this.location}/t`} render={() => (<h3>TYTTT</h3>)} />
+                    <Route exact path={`${this.location}/r`} render={() => (<h3>RRRR</h3>)} />
+                </Switch>
             </div>
         );
     }
 
     switchRouter() {
-        this.props.history.replace('/');
+        console.log(this.props.history);
+        this.props.history.replace('/main/t');
+    }
+
+    switchRoutert() {
+        console.log(this.props.history);
+        this.props.history.replace('/main/r');
     }
 }
 

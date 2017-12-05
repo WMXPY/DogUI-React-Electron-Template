@@ -1,0 +1,3 @@
+--require babel-core/register "test/**/*.jsx"
+--recursive test/*.jsx
+--reporter progress

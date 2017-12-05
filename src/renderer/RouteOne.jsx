@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import propTypes from 'prop-types';
 import Jumper from './jumper';
 const storage = window.require('electron-json-storage');
 
@@ -23,6 +24,10 @@ class RouterOne extends Component {
     switchRouter() {
         this.props.history.replace('/t');
     }
+}
+
+RouterOne.propTypes = {
+    history: propTypes.func.isRequired
 }
 
 export default RouterOne;
